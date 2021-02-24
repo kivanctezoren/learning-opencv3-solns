@@ -2,6 +2,9 @@
 
 This repository contains my solutions to the exercises provided in the book Learning OpenCV 3 (1st ed).
 
+The solutions are presented in both OpenCV 3 and OpenCV 4. (Though, the differences are often small if there are any.)
+Each program has its own CMake directives, and they are compiled independently.
+
 ## Requirements
 
 * **CMake (>= 3.0)**
