@@ -39,7 +39,10 @@ int main(int argc, char **argv) {
     
     while (true) {
         vcap >> frame;
-        if (frame.empty()) break;  // Reached end of video
+        if (frame.empty()) {
+            cout << "Got empty frame from camera, exiting." << endl;
+            break;
+        }
         
         cv::imshow("ch2ex3-ocv3", frame);
         
@@ -73,7 +76,9 @@ int main(int argc, char **argv) {
             try {
                 success = cv::imwrite(filename, frame_sdown, png_params);
             } catch (const cv::Exception& ex) {
-                cout << "Couldn't convert the captured image to PNG." << endl;
+                cout << "An error ocurred during the conversion of the captured"
+                    " image to PNG." << endl;
+                // TODO: Should display the error in stderr
             }
             
             if (success) {
