@@ -9,6 +9,8 @@ Each program has its own CMake directives, and they are compiled independently.
 
 * **CMake (>= 3.0)**
 
+* **Make**
+
 * **OpenCV 3** and/or **OpenCV 4**
 (The programs are tested using OpenCV versions `3.2.0` and `4.5.1`.)
 
