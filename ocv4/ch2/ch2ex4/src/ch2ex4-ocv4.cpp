@@ -43,7 +43,9 @@ int main(int argc, char **argv) {
             cout << "Got empty frame from camera, exiting." << endl;
             break;
         }
-                
+        
+        cv::pyrDown(frame, frame);  // Scale the frame down
+        
         cv::imshow("ch2ex3-ocv3", frame);
         
         switch (cv::waitKey(wait_time)) {
@@ -64,17 +66,13 @@ int main(int argc, char **argv) {
             
             // TODO: Should check if file exists, therefore allow multiple saves
             //  in one second
-            
-            cv::Mat frame_sdown;  // Scaled down frame
-            cv::pyrDown(frame, frame_sdown);
-            
             std::vector<int> png_params;
             png_params.push_back(cv::IMWRITE_PNG_COMPRESSION);
             png_params.push_back(3);
             
             bool success = false;
             try {
-                success = cv::imwrite(filename, frame_sdown, png_params);
+                success = cv::imwrite(filename, frame, png_params);
             } catch (const cv::Exception& ex) {
                 cout << "An error ocurred during the conversion of the captured"
                     " image to PNG." << endl;
