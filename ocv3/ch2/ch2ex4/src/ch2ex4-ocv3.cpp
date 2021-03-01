@@ -35,7 +35,7 @@ int main(int argc, char **argv) {
     cout << "Press Z to capture and save a downsampled color image." << endl;
     cout << "Press ESC to quit the program." << endl;
     
-    cv::namedWindow("ch2ex3-ocv3");
+    cv::namedWindow("ch2ex4-ocv3");
     
     while (true) {
         vcap >> frame;
@@ -46,7 +46,7 @@ int main(int argc, char **argv) {
         
         cv::pyrDown(frame, frame);  // Scale the frame down
         
-        cv::imshow("ch2ex3-ocv3", frame);
+        cv::imshow("ch2ex4-ocv3", frame);
         
         switch (cv::waitKey(wait_time)) {
         case 'z':
