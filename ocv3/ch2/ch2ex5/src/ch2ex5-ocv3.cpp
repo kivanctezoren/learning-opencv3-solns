@@ -42,6 +42,7 @@ int main(int argc, char **argv) {
         return -1;
     }
     
+    cout << "Use the slider to adjust the pyramid downsampling level." << endl;
     cout << "Press Z to capture and save a downsampled color image." << endl;
     cout << "Press ESC to quit the program." << endl;
     
